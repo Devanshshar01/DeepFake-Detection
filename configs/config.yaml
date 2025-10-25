@@ -1,0 +1,20 @@
+data:
+  video_resolution: [224, 224]
+  frame_rate: 30
+  num_frames: 16
+  batch_size: 8
+
+model:
+  backbone: "efficientnet_b3"
+  pretrained: true
+  num_classes: 2
+  dropout: 0.3
+
+training:
+  epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  early_stopping_patience: 7
+
+detection:
+  confidence_threshold: 0.7

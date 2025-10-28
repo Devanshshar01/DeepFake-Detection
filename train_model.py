@@ -137,10 +137,22 @@ def main():
     # Create trainer
     print("\nInitializing trainer...")
     trainer = Trainer(model, train_loader, val_loader, config)
-    
-    # Start training
+
+    # Display training configuration
     print("\n" + "="*60)
-    print("Starting training...")
+    print("Training Configuration:")
+    print("="*60)
+    print(f"Epochs: {config['training']['epochs']}")
+    print(f"Learning Rate: {config['training']['learning_rate']}")
+    print(f"Batch Size: {config['data']['batch_size']}")
+    print(f"Frames per Video: {config['data']['num_frames']}")
+    print(f"Mixup Alpha: {config['training'].get('mixup_alpha', 0.0)}")
+    print(f"Label Smoothing: {config['training'].get('label_smoothing', 0.0)}")
+    print(f"Cosine Schedule: {config['training'].get('use_cosine_schedule', True)}")
+    print("="*60)
+
+    # Start training
+    print("\nStarting training...")
     print("="*60)
     trainer.train(config['training']['epochs'])
     

@@ -10,3 +10,4 @@ models/pretrained/
 *.log
 .DS_Store
 .ipynb_checkpoints/
+.env
